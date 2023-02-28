@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div>
+        <h1>{{msg}}</h1>
+        <FirstComponentVue 
+            v-for="contact in contacts"
+            :key="contact.name"
+            :name="contact.name" 
+            :website-address="contact.websiteAddress" 
+            :phone="contact.phone">
+        </FirstComponentVue>
+    </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import FirstComponentVue from './FirstComponent.vue';
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
+    data(){
+        return {
+            msg: "This is VUE CLI Project",
+            contacts:[
+                {
+                    name: 'Ashadozzaman',
+                    phone: "017111111",
+                    websiteAddress: "ashadozzaman.com"
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+                },
+                {
+                    name: 'Shvou',
+                    phone: "018111111",
+                    websiteAddress: "shvoua.com"
+
+                },
+                {
+                    name: 'Karim',
+                    phone: "019111111",
+
+                },
+            ]
+        };
+    },
+    components:{
+        FirstComponentVue
+    }
 }
-</style>
+</script>

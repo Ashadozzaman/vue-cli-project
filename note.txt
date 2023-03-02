@@ -1,0 +1,3 @@
+1. props use for set component arrtibute data
+2. "Slot" this is use for write different html in same component
+3.when we try use multifle slot, must be need to define name
